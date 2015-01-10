@@ -51,5 +51,7 @@
 	height:250px;
 	background-color:#202022;
 }
-
+.jumbotron sitelogos {
+	float:center;
+}
 	
