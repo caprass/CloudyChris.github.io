@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+<link rel="stylesheet" href="dist\css\bootstrap.css">
+<link rel="stylesheet" href="design.css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<div>
+	<!-- the site header -->
+	<div class="header">
+	     <div class="pull-left">
+					<h4>Colegiul Economic</h4>
+					<h4>Mihail Kogalniceanu</h4>
+
+		</div>
+		<div class="nav">
+			<div class="container">
+				<ul class="pull-right">
+					<li><a href="#">Pagină principală</a></li>
+					<li><a href="#">Istoric</a></li>
+					<li><a href="#">C.E.A.C</a></li>
+					<li><a href="#">Activități extrașcolare</a></li>
+					<li><a href="#">Utile</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div>
+	
+	</div>
+</div>
+</body>
+			

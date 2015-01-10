@@ -1,0 +1,40 @@
+.nav a:hover{
+    text-decoration: none;
+	color: #ffffff;
+	background-color: #4e4e4e;
+}
+.nav a {
+	text-decoration: none;
+	display: inline-flex;
+    vertical-align: middle;
+	background-color: #0B89FF;
+	color: #3a3a3a;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 22px 54px;
+	text-transform: uppercase;
+    
+  
+}
+.nav ul {
+    vertical-align: bottom; 
+    background-color: #000000;
+	height: 60px;
+	width: 1024px;
+	
+	
+}
+.header {
+    background-color: #000000;
+	height: 60px;
+	
+}
+.header h4 {
+	color: #6e6e6e;
+	font-weight:900;
+}
+.nav li {
+    clear:both;
+	display: inline;
+	
+}
