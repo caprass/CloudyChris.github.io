@@ -25,6 +25,7 @@
 	width: 100%;
 }
 .nav li {
+	width:20%;
 	position: relative;
 	vertical-align: middle;
 	display:inline-flex;
