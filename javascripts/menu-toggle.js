@@ -1,6 +1,6 @@
 var main = function() {
 	$(".nav a").click(function(){
-	    $(this).toggleId('menubtn');
+	    $(this).toggleClass('menubtn');
 	});
 };
 
