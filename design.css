@@ -34,9 +34,6 @@
 	width: 100%;
 	border-bottom:1px solid #aeaeae;
 }
-.nav #secmenu {
-	height:0px;
-}
 .nav li {
 	position: relative;
 	vertical-align: middle;
