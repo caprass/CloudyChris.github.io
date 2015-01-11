@@ -19,6 +19,7 @@
 	margin-left:0;
 	float:center;
 	width: 100%;
+	border-bottom:1px solid #aeaeae;
 }
 .nav li {
 	position: relative;
@@ -29,7 +30,7 @@
 .nav ul {
 	width:90%;
 	padding-left:0px;
-        margin-top:0px;
+    margin-top:0px;
 	margin-bottom:0px;
 	margin-left:0px;
 	margin-right:0px;
@@ -39,7 +40,6 @@
 }
 .nav {
 	vertical-align: middle;
-	border-bottom:1px solid #aeaeae;
 	float:center;
 }
 .jumbotron {
