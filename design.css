@@ -37,6 +37,11 @@
 .nav #secmenu {
 	height:0px;
 }
+
+#secmenu ul {
+	height:=0px;
+}
+
 .nav li {
 	position: relative;
 	vertical-align: middle;
