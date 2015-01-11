@@ -1,5 +1,5 @@
 var main = function() {
-	$(".menu-btn").click(function(){
+	$(".nav .a").click(function(){
 		$(this).setAttribute('style','background-color:#3A5795;');
 	});
 }
