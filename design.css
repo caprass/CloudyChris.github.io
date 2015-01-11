@@ -47,8 +47,9 @@
 	float:center;
 }
 .jumbotron {
+	width:100%;
 	padding-top: 10px;
-	height:250px;
+	height:170px;
 	background-color:#202022;
 }
 .jumbotron sitelogos {
