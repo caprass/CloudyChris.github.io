@@ -42,11 +42,13 @@
 	float:center;
 }
 .nav {
+	position: fixed;
 	vertical-align: middle;
 	border-bottom:1px solid #aeaeae;
 	float:center;
 }
 .jumbotron {
+	position:fixed;
 	width:100%;
 	padding-top: 10px;
 	height:170px;
