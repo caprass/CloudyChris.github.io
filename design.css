@@ -14,6 +14,19 @@
 	background-color: #3A5795;
 	color: #ffffff;
 }
+#secmenu a {	
+	vertical-align: middle;
+	text-decoration:none;
+	color: #5a5a5a;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 9px 10px;
+	text-transform: uppercase;
+}
+#secmenu a:hover {
+	background-color: #3A5795;
+	color: #ffffff;
+}
 .nav #mainmenu {
 	margin-right:0;
 	margin-left:0;
