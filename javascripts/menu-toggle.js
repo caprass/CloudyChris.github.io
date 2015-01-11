@@ -1,6 +1,6 @@
 var main = function() {
 	$(".menu-btn").click(function{
-		$(this).toggleClass('active');
+		$(this).setAttribute('active');
 	});
 
 $(document).ready(main);
