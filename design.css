@@ -9,14 +9,10 @@
 	font-weight: bold;
 	padding: 9px 10px;
 	text-transform: uppercase;
-	border-left:1px solid #ffffff;
-	border-right:1px solid #ffffff;
 }
 .nav a:hover {
 	background-color: #3A5795;
 	color: #ffffff;
-	border-left:1px solid #aeaeae;
-	border-right:1px solid #aeaeae;
 }
 .nav .container {
 	margin-right:0;
