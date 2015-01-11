@@ -1,7 +1,7 @@
 .body {
 	width: 100%;
 }
-.nav a {	
+#mainmenu a {	
 	vertical-align: middle;
 	text-decoration:none;
 	color: #5a5a5a;
@@ -10,7 +10,7 @@
 	padding: 9px 10px;
 	text-transform: uppercase;
 }
-.nav a:hover {
+#mainmenu a:hover {
 	background-color: #3A5795;
 	color: #ffffff;
 }
