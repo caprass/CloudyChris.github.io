@@ -1,6 +1,6 @@
 var main = function() {
 	$(".nav a").click(function(){
-	    $(this).toggleClass('menubtn');
+	    $(this).css('background-color','#000000');
 	});
 };
 
