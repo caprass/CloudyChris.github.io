@@ -14,6 +14,10 @@
 	background-color: #3A5795;
 	color: #ffffff;
 }
+.nav a:active {
+	background-color: #3A5795;
+	color: #ffffff;
+}
 .nav .container {
 	margin-right:0;
 	margin-left:0;
