@@ -27,6 +27,10 @@
 	background-color: #3A5795;
 	color: #ffffff;
 }
+
+#secmenu {
+	width: 100%;
+}
 .nav #mainmenu {
 	margin-right:0;
 	margin-left:0;
