@@ -1,5 +1,5 @@
 var main = function() {
-	$(".menu-btn").click(function{
+	$(".menu-btn").click(function(){
 		$(this).setAttribute('active');
 	});
 
