@@ -1,3 +1,6 @@
+var fire = function() {
+	$('#secmenu ul').hide();
+};
 var main = function() {	
 	$("#pagprin").click(function(){
 		$('#mainmenu a').removeClass('menubtnactive');
@@ -31,4 +34,5 @@ var main = function() {
 	});	
 	
 };
+$(document).ready(fire);
 $(document).ready(main);
