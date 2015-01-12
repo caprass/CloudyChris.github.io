@@ -31,7 +31,4 @@ var main = function() {
 	});	
 	
 };
-$(document).ready(function(){
-	$('#secmenu ul').hide();
-});
 $(document).ready(main);

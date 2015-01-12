@@ -58,6 +58,9 @@
 	width: 100%;
 }
 
+#secmenu ul {
+	display:hide;
+}
 #secmenu a {	
 	vertical-align: middle;
 	text-decoration:none;
