@@ -2,16 +2,6 @@ body {
 	width: 100%;
 }
 
-#can {
-
-	background-color: #3A5795;
-	width:100%;
-}
-#capdepagina {
-
-	width:100%;
-}
-
 .nav {
 	vertical-align: middle;
 	float:center;
@@ -85,8 +75,7 @@ body {
 
 .jumbotron {
 	width:100%;
-	padding-top: 0px;
-	padding-bottom: 0px;
+	padding-top: 10px;
 	height:170px;
 	background-color:#3A5795;
 }
