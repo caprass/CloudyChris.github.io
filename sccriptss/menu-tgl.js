@@ -49,8 +49,8 @@ var main = function() {
 	    $(this).css('background-color','#3A5795');
 	    $(this).css('color','#ffffff');
 	});
-	$("#secmenu ").click(function(){
-		$('#secmenu #menunr1').empty();
+	$("#menunr1 a").click(function(){
+		$('#menunr1').empty();
 	    $('#secmenu').css('border-bottom', '0px solid #aeaeae');
 	    $('#mainmenu').css('border-bottom', '1px solid #aeaeae');
 	});
