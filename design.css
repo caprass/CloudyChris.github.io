@@ -28,6 +28,11 @@
 	color: #ffffff;
 }
 
+#mainmenu a .active {
+	background-color: #3A5795 ;
+	color: #ffffff;
+}
+
 #secmenu {
 	width: 100%;
 }
