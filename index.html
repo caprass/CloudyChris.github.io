@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
+
+<style>
+  #hamvaloare {width:100%; height:100%;padding:0;margin:0;background:#3A5795}
+#havemvaloare {padding:0;margin:0;height:100%; width:100%; line-height:1.3rem;font-family: 'Quicksand', sans-serif}
+
+#mihailkog {width:130px;height:149.33px;position:absolute;left:20%;top:2%}
+  </style>
+
+
+
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="sccriptss/menu-tgl.js"></script>
 <link rel="stylesheet" href="dist/css/bootstrap.css">
@@ -10,7 +23,376 @@
 <body>
 	<div id="capdepagina">
 		<div class="jumbotron" style="margin-bottom: 0px;">
-			<img src="ec1.png" class="sitelogos center-block" width="130" height="149.33">
+		<div id="hamvaloare">
+			<div id="havemvaloare">
+
+  <div style="height:100%;background:#3A5795">
+  <canvas height="100%" width="100%" id="can" style="background: none repeat scroll 0% 0% rgb(255, 255, 255); width: 100%; height: 100%;"></canvas>
+</div>
+
+<div class="item"> 
+  <img data-color="{&quot;red&quot;:255,&quot;green&quot;:165,&quot;blue&quot;:0}" src="ec1.png" class="sitelogos center-block" width="130" height="149.33">
+</div>
+
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage('resize', "*");
+    }
+  </script>
+
+  <script src="http://assets.codepen.io/assets/common/stopExecutionOnTimeout-6c99970ade81e43be51fa877be0f7600.js"></script>
+
+  <script>
+    var Stars = function()
+{
+    var me = this;
+    var canEle = document.getElementById('can');
+    var can    = canEle.getContext('2d');
+    var height = 0;
+    var width  = 0;
+
+    var mdDefault = 150;
+    var mdHover   = 500;
+    var mdDec     = true;
+
+    var max           = 200;
+    var distance      = 100;
+    var mouseDistance = mdDefault;
+
+    var stars    = new Array(max);
+    var mouse    = {
+        x : width / 2,
+        y : height / 2
+    };
+
+    var defaultRed   = 255;
+    var defaultGreen = 255;
+    var defaultBlue  = 255;
+
+    var red   = defaultRed;
+    var green = defaultGreen;
+    var blue  = defaultBlue;
+
+    var targetRed   = red;
+    var targetGreen = green;
+    var targetBlue  = blue;
+
+    var speedDefault = 1;
+    var speedHover   = 15;
+    var speed        = speedDefault;
+
+    var maxTime = 0;
+    var minTime = 1000;
+
+    var moving   = false;
+    var lastTime = new Date();
+
+    var arcCache = {};
+
+    me.start = function()
+    {
+        if (navigator.appVersion.match('Chrome')) {
+            max = 300;
+        }
+
+        resize();
+        createStars();
+        //setInterval(run, 1000 / 30);
+        run();
+
+        document.onmousemove = mousemove;
+
+        $('span[href]').click(function() {
+            $('span[href]').not($(this)).css('opacity', 0);
+            location.href = $(this).attr('href');
+
+            return false;
+        });
+
+        $('.item').hover(function() {
+            //moving        = true;
+            mdDec         = false;
+            speed         = speedHover;
+            var color = c = $(this).children().eq(0).data('color');
+
+            if (!color) {
+                targetRed   = defaultRed;
+                targetGreen = defaultGreen;
+                targetBlue  = defaultBlue;
+            } else {
+                targetRed   = color.red;
+                targetGreen = color.green;
+                targetBlue  = color.blue;
+            }
+        }, function() {
+            moving        = false;
+            mdDec         = true;
+            speed         = speedDefault;
+            targetRed     = defaultRed;
+            targetGreen   = defaultGreen;
+            targetBlue    = defaultBlue;
+        });
+    };
+
+    var mousemove = function(e)
+    {
+        mouse.x = e.pageX;
+        mouse.y = e.pageY;
+    };
+
+    var run = function()
+    {
+        clean();
+        drawStars();
+    };
+
+    var drawStars = function()
+    {
+        for (var i = 0; i < max; i++) {
+            stars[i].connected = [];
+        }
+
+        var time = new Date();
+
+        setColors();
+        can.lineWidth   = 1;
+        var dist        = 0.0;
+
+        if (mdDec && mouseDistance > mdDefault) {
+            mouseDistance -= 80;
+        } else if (!mdDec && mouseDistance < mdHover) {
+            mouseDistance += 80;
+        }
+
+        for (var i = 0; i < max; i++) {
+            if (!moving) {
+                moveStar(stars[i]);
+            }
+
+            var star = stars[i];
+
+            dist     = Math.sqrt(Math.pow(star.x - mouse.x, 2) + Math.pow(star.y - mouse.y, 2));
+
+            if (dist < mouseDistance * 2) {
+                can.fillStyle   = 'rgb('.concat(red, ',', green, ',',  blue, ')');
+            } else {
+                can.fillStyle   = 'rgba('.concat(red, ',', green, ',',  blue, ', 0.3)');
+            }
+
+            can.fillRect(star.x, star.y, star.size / 2, star.size);
+
+            can.beginPath();
+            if (dist < mouseDistance) {
+                star.arc = true;
+
+                for (var j = 0; j < max; j++) {
+                    var refStar = stars[j];
+
+                    if (star == refStar || refStar.connected.indexOf(star) != -1) {
+                        continue;
+                    }
+
+                    if (
+                        Math.abs(star.x - refStar.x) < distance &&
+                        Math.abs(star.y - refStar.y) < distance
+                    ) {
+                        star.connected.push(refStar);
+                        drawRelation(star, refStar);
+                    }
+                }
+            } else {
+                star.arc = false;
+            }
+
+            can.stroke();
+            can.closePath();
+        }
+
+        for (var i = 0; i < max; i++) {
+            if (stars[i].arc) {
+                arc(stars[i]);
+            }
+        }
+
+        var nDate = new Date();
+        var time  = nDate.getTime() - time.getTime();
+
+        if (time > maxTime) {
+            maxTime = time;
+        }
+
+        if (time < minTime) {
+            minTime = time;
+        }
+
+       
+
+        var avFps = parseInt(1000 / time + 15);
+        var fps   = parseInt(nDate.getTime() - lastTime.getTime());
+
+        if (fps > avFps) {
+            fps = avFps;
+        }
+
+      
+        lastTime = new Date();
+
+        setTimeout(run, (1000 / 30) - time); //sollte am Ende stehen, damit sich die Prozedur nicht überholen kann
+    };
+
+    var arc = function(star)
+    {
+        var r = star.size * 2;
+        can.drawImage(star.cache, star.x - r, star.y - r, r * 2, r * 2);
+    }
+
+    var setColors = function()
+    {
+        var percent = 10;
+
+        if (targetRed != red) {
+            var tick = Math.floor(Math.abs(targetRed - red) / percent);
+
+            if (targetRed > red) {
+                red += tick;
+            } else {
+                red -= tick;
+            }
+        }
+        if (targetGreen != green) {
+            var tick = Math.floor(Math.abs(targetGreen - green) / percent);
+
+            if (targetGreen > green) {
+                green += tick;
+            } else {
+                green -= tick;
+            }
+        }
+        if (targetBlue != blue) {
+            var tick = Math.floor(Math.abs(targetBlue - blue) / percent);
+
+            if (targetBlue > blue) {
+                blue += tick;
+            } else {
+                blue -= tick;
+            }
+        }
+
+        can.fillStyle   = 'rgb('.concat(red, ',', green, ',',  blue, ')');
+        can.strokeStyle = 'rgba('.concat(red, ',', green, ',',  blue, ', 0.3)');
+    }
+
+    var drawRelation = function(star, refStar)
+    {
+        can.moveTo(star.x | 0, star.y | 0);
+
+        if (true) {
+            can.lineTo(refStar.x | 0, refStar.y | 0);
+            return;
+        } else {
+            var midX = Math.max(star.x, refStar.x) - (Math.max(star.x, refStar.x) - Math.min(star.x, refStar.x)) / 2;
+            var midY = Math.max(star.y, refStar.y) - (Math.max(star.y, refStar.y) - Math.min(star.y, refStar.y)) / 2;
+
+            if (star.curve > 0) {
+                midX += 20;
+                midY += 20;
+            } else {
+                midX -= 20;
+                midY -= 20;
+            }
+        }
+    };
+
+    var moveStar = function(star)
+    {
+        star.x += star.dirX * speed;
+        star.y += star.dirY * speed;
+
+        if (star.y > height) {
+            star.dirY = Math.random() * -1;
+        } else if (star.y < 0) {
+            star.dirY = Math.random();
+        } else if (star.x > width) {
+            star.dirX = Math.random() * -1;
+        } else if (star.x < 0) {
+            star.dirX = Math.random();
+        }
+
+        return star;
+    };
+
+    var clean = function()
+    {
+        can.fillStyle = 'rgb(0, 0, 0)';
+        can.fillRect(0, 0, width, height);
+    };
+
+    var createStars = function()
+    {
+        for (var i = 0; i < max; i++) {
+           stars[i] = createStar();
+        }
+    };
+
+    var createStar = function()
+    {
+        var star = {
+            x     : Math.random() * width,
+            y     : Math.random() * height,
+            dirX  : (Math.random() - 0.5),
+            dirY  : (Math.random() - 0.5),
+            size  : Math.ceil(Math.random() * 3),
+            curve : (Math.random() - 0.5),
+            line  : (Math.random() - 0.5),
+            arc   : false
+        };
+
+        initCache(star);
+
+        return star;
+    };
+
+    var initCache = function(star)
+    {
+        var cache = $(document.createElement('canvas'));
+        var c     = cache.get(0).getContext('2d');
+        var r     = star.size * 2;
+
+        cache.attr({
+            width  : star.size * 4,
+            Height : star.size * 4
+        });
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        c.fillStyle = 'rgba(200, 200, 200, 0.5)';
+        c.beginPath();
+        c.arc(r, r, r, 0, 2*Math.PI);
+        c.fill();
+
+        star.cache = cache.get(0);
+    }
+
+    var resize = function()
+    {
+        height = canEle.parentElement.offsetHeight - 10;
+        width  = canEle.parentElement.offsetWidth - 10;
+        canEle.style.width  = ''.concat(width, 'px');
+        canEle.style.height = ''.concat(height, 'px');
+        canEle.setAttribute('width', width);
+        canEle.setAttribute('height', height);
+    }
+};
+
+var stars = new Stars();
+stars.start();
+    //@ sourceURL=pen.js
+  </script>
+
+
+
+</div>
+</div>
 		</div>
 		<div class="nav">
 			<div id="mainmenu" class="container" align="center" style=" padding-left: 0px ; padding-right: 0px;">
