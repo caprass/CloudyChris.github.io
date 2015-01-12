@@ -49,7 +49,7 @@ var main = function() {
 	    $(this).css('background-color','#3A5795');
 	    $(this).css('color','#ffffff');
 	});
-	$("#secmenu ul li a").click(function(){
+	$("#secmenu ").click(function(){
 		$('#secmenu #menunr1').empty();
 	    $('#secmenu').css('border-bottom', '0px solid #aeaeae');
 	    $('#mainmenu').css('border-bottom', '1px solid #aeaeae');
