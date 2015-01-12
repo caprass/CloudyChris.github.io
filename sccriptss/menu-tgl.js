@@ -50,7 +50,7 @@ var main = function() {
 	    $(this).css('color','#ffffff');
 	});
 	$("#secmenu a").click(function(){
-		$('#secmenu ul').empty();
+		$('#secmenu ul').hide();
 	});
 };
 $(document).ready(main);
