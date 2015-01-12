@@ -58,9 +58,6 @@
 	width: 100%;
 }
 
-#secmenu ul {
-	display:none;
-}
 #secmenu a {	
 	vertical-align: middle;
 	text-decoration:none;
@@ -73,6 +70,21 @@
 #secmenu a:hover {
 	background-color: #5a5a5a;
 	color: #ffffff;
+}
+#menunr1 {
+	display:none;
+}
+#menunr2 {
+	display:none;
+}
+#menunr3 {
+	display:none;
+}
+#menunr4 {
+	display:none;
+}
+#menunr5 {
+	display:none;
 }
 
 .jumbotron {
