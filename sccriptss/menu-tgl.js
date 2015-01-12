@@ -32,6 +32,9 @@ var main = function() {
 		$(this).addClass('menubtnactive');
 		$('#menunr5').show();
 	});	
+	$("#secmenu a").click(function(){
+		$('#secmenu ul').hide();
+	});	
 	
 };
 $(document).ready(fire);
