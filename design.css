@@ -1,6 +1,40 @@
 .body {
 	width: 100%;
 }
+
+.nav {
+	vertical-align: middle;
+	float:center;
+}
+
+.nav ul {
+	width:90%;
+	padding-left:0px;
+    margin-top:0px;
+	margin-bottom:0px;
+	margin-left:0px;
+	margin-right:0px;
+	position: relative;
+	vertical-align: middle;
+	float:center;
+}
+
+.nav li {
+	position: relative;
+	vertical-align: middle;
+	display:inline-flex;
+	float:center;
+}
+
+#mainmenu {
+	margin-right:0;
+	margin-left:0;
+	float:center;
+	width: 100%;
+	border-bottom:1px solid #aeaeae;
+}
+
+
 #mainmenu a {	
 	vertical-align: middle;
 	text-decoration:none;
@@ -14,6 +48,16 @@
 	background-color: #3A5795;
 	color: #ffffff;
 }
+
+#mainmenu .menubtnactive {
+	background-color: #3A5795 ;
+	color: #ffffff;
+}
+
+#secmenu {
+	width: 100%;
+}
+
 #secmenu a {	
 	vertical-align: middle;
 	text-decoration:none;
@@ -28,42 +72,6 @@
 	color: #ffffff;
 }
 
-#mainmenu .menubtnactive {
-	background-color: #3A5795 ;
-	color: #ffffff;
-}
-
-#secmenu {
-	width: 100%;
-}
-.nav #mainmenu {
-	margin-right:0;
-	margin-left:0;
-	float:center;
-	width: 100%;
-	border-bottom:1px solid #aeaeae;
-}
-.nav li {
-	position: relative;
-	vertical-align: middle;
-	display:inline-flex;
-	float:center;
-}
-.nav ul {
-	width:90%;
-	padding-left:0px;
-    margin-top:0px;
-	margin-bottom:0px;
-	margin-left:0px;
-	margin-right:0px;
-	position: relative;
-	vertical-align: middle;
-	float:center;
-}
-.nav {
-	vertical-align: middle;
-	float:center;
-}
 .jumbotron {
 	width:100%;
 	padding-top: 10px;
