@@ -59,7 +59,7 @@
 }
 
 #secmenu ul {
-	display:hide;
+	display:none;
 }
 #secmenu a {	
 	vertical-align: middle;
