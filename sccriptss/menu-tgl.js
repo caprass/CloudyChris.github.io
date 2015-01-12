@@ -3,23 +3,23 @@ var main = function() {
 	$("#pagprin").click(function(){
 		$('#mainmenu a').removeClass('menubtnactive');
 
-		$(this).addClass('active');
+		$(this).addClass('menubtnactive');
 	});
 	$("#isteric").click(function(){
 		$('#mainmenu a').removeClass('menubtnactive');
-		$(this).addClass('active');
+		$(this).addClass('menubtnactive');
 	});
 	$("#ceacpag").click(function(){
 		$('#mainmenu a').removeClass('menubtnactive');
-		$(this).addClass('active');
+		$(this).addClass('menubtnactive');
 	});
 	$("#actiext").click(function(){
 		$('#mainmenu a').removeClass('menubtnactive');
-		$(this).addClass('active');
+		$(this).addClass('menubtnactive');
 	});
 	$("#utilepg").click(function(){
 		$('#mainmenu a').removeClass('menubtnactive');
-		$(this).addClass('active');
+		$(this).addClass('menubtnactive');
 	});	
 	
 };
