@@ -28,7 +28,7 @@
 	color: #ffffff;
 }
 
-#mainmenu a .active {
+#mainmenu a:active {
 	background-color: #3A5795 ;
 	color: #ffffff;
 }
