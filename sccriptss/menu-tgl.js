@@ -3,25 +3,25 @@ var main = function() {
 		$('#mainmenu a').removeClass('menubtnactive');
 		$('#secmenu ul').hide();
 		$(this).addClass('menubtnactive');
-		$('#menunr5').show();
+		$('#menunr1').show();
 	});
 	$("#isteric").click(function(){
 		$('#mainmenu a').removeClass('menubtnactive');
 		$('#secmenu ul').hide();
 		$(this).addClass('menubtnactive');
-		$('#menunr5').show();
+		$('#menunr2').show();
 	});
 	$("#ceacpag").click(function(){
 		$('#mainmenu a').removeClass('menubtnactive');
 		$('#secmenu ul').hide();
 		$(this).addClass('menubtnactive');
-		$('#menunr5').show();
+		$('#menunr3').show();
 	});
 	$("#actiext").click(function(){
 		$('#mainmenu a').removeClass('menubtnactive');
 		$('#secmenu ul').hide();
 		$(this).addClass('menubtnactive');
-		$('#menunr5').show();
+		$('#menunr4').show();
 	});
 	$("#utilepg").click(function(){
 		$('#mainmenu a').removeClass('menubtnactive');
