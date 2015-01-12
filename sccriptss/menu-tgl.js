@@ -1,4 +1,5 @@
 var main = function() {
+	$('#secmenu ul').hide();
 	$("#pagprin").click(function(){
 		$('#mainmenu a').removeClass('active');
 
@@ -20,6 +21,6 @@ var main = function() {
 		$('#mainmenu a').removeClass('active');
 		$(this).addClass('active');
 	});	
-	$('#secmenu ul').display="hidden";
+	
 };
 $(document).ready(main);
